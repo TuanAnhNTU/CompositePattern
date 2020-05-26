@@ -22,12 +22,15 @@ public class Folder extends AbstractFile
     public String getStringTreeFolder() 
     {
         StringBuilder builder = new StringBuilder();
-        builder.append(this.prefix).
-                append(name);
-        listItem.forEach((file) -> {
+        builder.append(this.prefix).append(name);
+        for(AbstractFile file: listItem)
+        {
+            file.prefix = this.prefix +"..";
             builder.append("\n")
-                    .append(file.getStringTreeFolder());
-        });
+                .append(file.getStringTreeFolder());
+            file.prefix="";
+        };
+        //this.prefix = "";
         return builder.toString();
     }
    
@@ -38,7 +41,6 @@ public class Folder extends AbstractFile
         listItem.add(file);
         String filePath = getPath() + "\\" + file.name;
         file.path = filePath;
-        file.prefix = this.prefix + "..";
     }
     
     @Override

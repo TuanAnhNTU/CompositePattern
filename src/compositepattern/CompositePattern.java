@@ -20,7 +20,7 @@ public class CompositePattern {
         AbstractFile root = new Folder("Data", "1-1-2020");
         AbstractFile toanFolder = new  Folder("Toan", "1-1-2020");
         AbstractFile lyFolder = new Folder("Ly", "1-1-2020");
-        AbstractFile lyFolder10 = new  Folder("Ly Lop 10", "1-1-2020");
+        AbstractFile lyFolder10 = new  Folder("LyLop10", "1-1-2020");
         AbstractFile coHoc = new File("CoHocVaSong.pdf", "1-1-2020");
         AbstractFile tichPhan = new File("TichPhan12.doc", "1-1-2020");
         AbstractFile daiSo = new File("DaiSo12.doc", "1-1-2020");
@@ -36,6 +36,9 @@ public class CompositePattern {
         System.out.println(coHoc.getPath());
         root.removeItem(tichPhan);
         System.out.println(root.getStringTreeFolder());
+        System.out.println("---------------------------------");
+        System.out.println(toanFolder.getStringTreeFolder());
+         System.out.println("----------------------------------");
         root.removeItem(lyFolder10);
         System.out.println(root.getStringTreeFolder());
     }
